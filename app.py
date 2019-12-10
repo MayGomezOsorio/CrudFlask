@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, abort
 from flask_sqlalchemy import SQLAlchemy
 import smtplib
+from sys import argv
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database/tasks.db'
@@ -60,4 +61,4 @@ def mail(msg):
     server.quit()
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0',port=argv[1])
+    app.run(host='0.0.0.0', port=argv[1])
